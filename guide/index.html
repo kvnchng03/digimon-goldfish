@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Improve at Digimon TCG with general strategy lessons, short drills, and a Glowing Dawn playbook with matchups and decision puzzles.">
+<meta name="theme-color" content="#101f38">
+<meta name="apple-mobile-web-app-title" content="Digimon Guide">
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>Digimon improvement guide | Glowing Dawn playbook</title>
+<script type="module" src="/src/theme.ts"></script>
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<a href="#guide" class="skip">Skip to guide</a>
+<header class="topbar">
+  <a class="brand" href="#learn"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" stroke="currentColor" stroke-width="2"/><path d="M11 9h11l-3 6h-6l-3 8h11" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></span><span><strong>Glowing Dawn</strong><small>Your Digimon playbook</small></span></a>
+  <nav class="view-nav" aria-label="Main navigation"><a href="#learn" data-route="learn" aria-current="page">Learn</a><a href="#fundamentals" data-route="fundamentals">Improve</a><a href="#matchups" data-route="matchups">Matchups</a><a href="#puzzles" data-route="practice">Practice</a></nav>
+  <div class="actions"><button class="button theme-button" id="theme-button" type="button" aria-label="Switch color theme">Dark mode</button><button class="button print-button" id="print-button" type="button">Print</button></div>
+</header>
+<div class="shell">
+<main id="guide">
+
+<section class="hero" data-view="learn" id="learn" aria-labelledby="title">
+  <div class="hero-grid"><div class="hero-copy">
+    <p class="hero-meta"><span class="deck-dot" aria-hidden="true"></span> Tomoro &amp; Kyo / Glowing Dawn</p>
+    <h1 id="title">Know your cards.<br>Find your winning line.</h1>
+    <p class="lede">A practical playbook for your next game. Build the engine, read the matchup, and make every attack count.</p>
+    <div class="actions"><a class="button primary" href="#puzzles">Start practising <span aria-hidden="true">↗</span></a><a class="button hero-secondary" href="#turn">In-game checklist</a></div><p class="hero-guide-link">Building your skills? <a href="#fundamentals">Explore the general Digimon guide</a></p>
+  </div><div class="hero-deck">
+    <div class="card-fan" aria-label="Featured Glowing Dawn cards"><div data-card-slot="ST23-13"></div><div data-card-slot="ST23-09"></div><div data-card-slot="BT25-043"></div></div>
+    <p>Meet your engine and finishers <span>Click a card to inspect</span></p>
+  </div></div>
+</section>
+<nav class="quick-nav" data-view="learn" aria-label="Learn sections"><a href="#opening"><span>01</span><div><strong>Build your opening</strong><small>What to keep. What to redraw.</small></div></a><a href="#turn"><span>02</span><div><strong>Plan the whole turn</strong><small>Six checks before you commit.</small></div></a><a href="#timing"><span>03</span><div><strong>Know your clock</strong><small>When to hold. When to finish.</small></div></a></nav>
+<section class="section" data-view="learn" id="opening" aria-labelledby="opening-title">
+  <div class="section-head"><div><h2 id="opening-title">Start with an engine, not just an evolution line.</h2><p class="intro">A full evolution line is not enough if the fuel engine never starts.</p></div><a class="source-link" href="#source-playbook">Playbook evidence</a></div>
+  <div class="opening-cards"><div><span class="section-label">Your opening priorities</span><p>Find a Tamer early. These are the cards to recognise in your opening hand.</p></div><div class="card-shelf" data-card-list="ST23-13,ST23-06,BT25-032,ST23-15"></div></div>
+  <div class="opening"><article><span class="tag green">Keep</span><h3>Lv3 + Tamer access</h3><p>Look for a Tamer, or a route to one: e-Pulse, Gekkomon ST23-06, or Liollmon BT25-032. A searcher is a chance to find one, not a guarantee.</p></article><article><span class="tag">Redraw</span><h3>No Tamer. No way to find one.</h3><p>Redraw this hand even if it has your evolution line. Liollmon BT26-025 is not the searcher. The two cited losses had no Tamer until turns 3-4.</p></article></div>
+  <div class="note"><strong>Raise ST23 Gekkomon when the matchup allows it.</strong><p>Moving it out loads a card under a Tamer. Against early removal, keeping the stack safe in breeding can matter more than moving on schedule.</p></div>
+  <p class="table-note">Tamer timing is pilot advice supported by observed losses; the redraw rule is a research inference. “T2” means that player's second turn throughout this guide.</p>
+</section>
+
+<section class="section" data-view="learn" id="turn" aria-labelledby="turn-title">
+  <div class="section-head"><div><h2 id="turn-title">Your turn, in six checks.</h2><p class="intro">Six checks for the turn. Tick them as you plan, then reset next turn.</p></div><a class="source-link" href="#source-playbook">Misplays &amp; resources</a></div>
+  <div class="turn-layout"><div class="check-panel">
+    <div class="check-header"><p id="check-count" aria-live="polite">0 of 6 checked</p><button class="button no-print" id="reset-checks" type="button">Reset turn</button></div>
+    <label class="check-row"><input type="checkbox"><span><strong>Resolve start-of-main Tamer triggers.</strong><span class="hint">Do these before planning your spend. Forgetting them appeared in multiple recorded games.</span></span></label>
+    <label class="check-row"><input type="checkbox"><span><strong>Count fuel under each Tamer.</strong><span class="hint">Name each cost and the card you will trash. Don't spend fuel now that your finish needs later.</span></span></label>
+    <label class="check-row"><input type="checkbox"><span><strong>Write the memory path, including the pass.</strong><span class="hint">On a kill turn, aim for 1-2 spare memory against security Tamers where possible. Check their actual effects; a margin is not a guarantee.</span></span></label>
+    <label class="check-row"><input type="checkbox"><span><strong>Count security, checks and the final attack.</strong><span class="hint">Include blockers, redirects and recovery. If your second attack needs an inherited unsuspend, verify the Lv5 actually provides it.</span></span></label>
+    <label class="check-row"><input type="checkbox"><span><strong>Compare DP and read the protection.</strong><span class="hint">Account for all buffs and lingering -DP. A recorded 16k-into-16k Bacchusmon attack was a costly miscount. Digimon-effect immunity is not Option immunity.</span></span></label>
+    <label class="check-row"><input type="checkbox"><span><strong>Choose: finish now, develop, or hold.</strong><span class="hint">Avoid casual chip damage that gives them free resources. Check the matchup and whether you survive another turn.</span></span></label>
+    <p class="check-footer">Checked boxes mean you considered the questions. They do not certify a legal or winning line. Progress resets when this page reloads.</p>
+  </div>
+  <div class="micro turn-notes"><article><strong>Fuel is line-dependent.</strong><p>Round 2 reports 3-4 for one pilot's finish. Round 1 reports about 5, or 4 with BT25 Murasamemon. Count your own costs.</p></article><article><strong>Check the Lv5 base.</strong><p>DUAL Lv5s have Option text below, not an inherited unsuspend. A planned second attack can disappear.</p></article><article><strong>Chipping has a cost.</strong><p>Flips can give them Tamers, bodies or removal. Attack only when the resulting position improves your chance to win.</p></article></div>
+  </div>
+</section>
+
+<section class="hero improve-hero" data-view="fundamentals" id="fundamentals" aria-labelledby="improve-title">
+  <div class="improve-header"><div>
+    <p class="hero-meta">Skills for any deck</p>
+    <h1 id="improve-title">Get better at Digimon.<br>One decision at a time.</h1>
+    <p class="lede">Learn what to count, when to commit, and how to learn from a loss. Pick one habit to practise in your next games.</p>
+    <a class="button primary" href="#improve-plan">Start with your game plan</a>
+  </div><aside class="decision-prompt" aria-label="Before you commit"><h2>Before you commit</h2><ul><li>How do I win from here?</li><li>What can stop this line?</li><li>What do I leave them next turn?</li></ul><a href="#weekly-practice">Build a weekly routine</a></aside></div>
+</section>
+
+<section class="section" data-view="fundamentals" aria-labelledby="focus-title">
+  <div class="section-head"><div><h2 id="focus-title">Start where your games go wrong.</h2><p class="intro">Jump to a lesson, or work through the guide below.</p></div><a class="source-link" href="#source-improve">Sources &amp; rules</a></div>
+  <nav class="focus-links" aria-label="Choose an improvement focus">
+    <a href="#improve-plan"><strong>My openings stall</strong><span>Build a hand around a plan.</span></a>
+    <a href="#improve-memory"><strong>I run out of memory</strong><span>Price the whole turn before starting.</span></a>
+    <a href="#improve-finish"><strong>I lose from ahead</strong><span>Count a finish and respect their reply.</span></a>
+    <a href="#improve-review"><strong>I don't know why I lost</strong><span>Find a decision you can practise.</span></a>
+  </nav>
+</section>
+
+<section class="section" data-view="fundamentals" id="improvement-lessons" aria-labelledby="lessons-title">
+  <div class="section-head"><div><h2 id="lessons-title">Eight habits to build.</h2><p class="intro">Each lesson has an example and a short drill. These are coaching tools; the best line depends on your cards and opponent.</p></div></div>
+  <div class="lessons">
+    <details class="lesson" id="improve-plan" open>
+      <summary><span>Build an opening with a job</span><small>Win condition &amp; consistency</small></summary>
+      <div class="lesson-body">
+        <p>Describe how your deck wins in one sentence: a large attack turn, several small attackers, or surviving until the opponent runs out of resources. Then name the setup it needs. A hand is useful when it starts that plan and has a route to the next step.</p>
+        <div class="lesson-example"><h3>Try this comparison</h3><p>In a deck that needs a Tamer to function, an evolution line without Tamer access can be weaker than a less complete line with an early engine and search. In another deck, that same Tamer may be too slow. Judge cards by their jobs, not just their levels.</p></div>
+        <p class="lesson-drill"><strong>Five-minute drill:</strong> Deal ten opening hands. Before drawing anything else, say keep or redraw, your first two plays, and the card you still need. Track whether the opening plan worked, not whether the game was won.</p>
+        <a href="#opening">See the Glowing Dawn opening example</a>
+      </div>
+    </details>
+    <details class="lesson" id="improve-memory">
+      <summary><span>Plan both sides of the memory gauge</span><small>Tempo &amp; useful resources</small></summary>
+      <div class="lesson-body">
+        <p><strong>Card advantage</strong> is having more useful cards to work with. <strong>Tempo</strong> is what those resources let you accomplish now. A search that adds cards can still be too slow if it funds the opponent's winning turn.</p>
+        <div class="lesson-example"><h3>Price the whole line</h3><p>Start at 3 memory. Spend 2: you have 1. Spend another 3: the gauge reaches their 2. This assumes no discounts or memory changes. Compare the board you built with what they can do from there; a Tamer that sets them to 3 may erase your denial.</p></div>
+        <p>Crossing the gauge does not interrupt an attack or unresolved effects. Check the end-of-turn conditions after processing, including any end-of-turn effects. <a href="https://world.digimoncard.com/rule/pdf/general_rule.pdf?20260918=#page=14" target="_blank" rel="noopener noreferrer">Official rules: §§6-1-4, 6-6</a>.</p>
+        <p class="lesson-drill"><strong>Five-minute drill:</strong> Replay one turn with two lines. Write the memory after every cost and gain, the final board, and the opponent's likely start. Explain which line gives them the less dangerous reply.</p>
+      </div>
+    </details>
+    <details class="lesson" id="improve-sequence">
+      <summary><span>Sequence to keep your options open</span><small>Information &amp; breeding timing</small></summary>
+      <div class="lesson-body">
+        <p>When two actions are legal, ask whether one gives information that could change the other. Draws and searches can guide a later commitment, but only if you leave enough memory and the required targets to use what you find.</p>
+        <div class="lesson-example"><h3>Make the decision at the right time</h3><p>A search might determine which evolution you choose in your main phase. It usually cannot inform that turn's normal breeding-phase move: that phase already happened. Decide whether to expose the stack using the information you have then.</p></div>
+        <p>Holding a stack can protect your investment; moving it can apply pressure and free breeding for your next stack. Compare the value you get now, the removal you expect, and the cost of waiting. Don't turn “stay safe” into an automatic rule.</p>
+        <p class="small">Timing reference: <a href="https://world.digimoncard.com/rule/pdf/general_rule.pdf?20260918=#page=14" target="_blank" rel="noopener noreferrer">official rules, §§6-4 and 6-5</a>.</p>
+        <p class="lesson-drill"><strong>Five-minute drill:</strong> Take a hand and board you remember. List two legal orders of play. Circle where a new card changes your choice and where you commit a resource you cannot get back.</p>
+      </div>
+    </details>
+    <details class="lesson" id="improve-finish">
+      <summary><span>Count a complete finish</span><small>Attacks, security &amp; risk</small></summary>
+      <div class="lesson-body">
+        <p>Count legal attacks, not just bodies. Check who can attack, memory, DP, inherited effects and every cost needed to attack again. Then account for blockers, redirects, counter effects, recovery and security that can stop the line.</p>
+        <div class="lesson-example"><h3>Three security is not three attacks for game</h3><p>Against 3 security, an attack making 2 checks, then one making 1 check, then a separate direct attack can win. Assume all attacks connect, the checking attackers survive their checks, and there are no interruptions or recovery. Extra checks alone do not turn the attack that empties security into a win.</p></div>
+        <p>The final attacker must still be able to perform at least one security check. A blocker can consume an attack you needed for the finish; removing it may cost memory needed elsewhere. <a href="https://world.digimoncard.com/rule/pdf/general_rule.pdf?20260918=#page=23" target="_blank" rel="noopener noreferrer">Official rules: §§11-5, 12-13</a>.</p>
+        <p>Before taking a partial attack, ask whether it brings your winning turn closer. Security may give them resources or remove your attacker. If you cannot survive another turn, accepting that risk can still be your best chance.</p>
+        <p class="lesson-drill"><strong>Five-minute drill:</strong> Lay out a possible finish, then add one blocker. Recount from the beginning. Name which security effect breaks the line and whether you can preserve a backup attacker.</p>
+        <a href="#puzzles">Practise attack decisions in the puzzles</a>
+      </div>
+    </details>
+    <details class="lesson" id="improve-matchup">
+      <summary><span>Learn their next important turn</span><small>Matchups &amp; racing</small></summary>
+      <div class="lesson-body">
+        <p>Your <strong>clock</strong> is how soon you threaten to win if the position holds. Compare it with theirs. If they threaten to win first, you need a faster line or a way to interrupt them. If you are ahead, consider which response could take that lead away.</p>
+        <div class="lesson-example"><h3>Learn a matchup in five questions</h3><ul><li>What setup lets them win?</li><li>What can they do on their next turn?</li><li>Which removal, blockers or protection matter?</li><li>How do they gain memory or resources from security?</li><li>Which of my cards answers their key threat?</li></ul></div>
+        <p>Read the actual source, timing, scope and duration of protection. A remembered label like “immune” is not enough to choose an answer. Include revealed cards, Tamers and the stack in breeding in your prediction.</p>
+        <p class="lesson-drill"><strong>During your next game:</strong> Predict their main play before each opposing turn. Afterwards, compare what happened and the information you missed. Ask your practice partner which alternative they considered.</p>
+        <a href="#matchups">Use the matchup references as worked examples</a>
+      </div>
+    </details>
+    <details class="lesson" id="improve-outs">
+      <summary><span>Count the cards that actually help</span><small>Outs &amp; uncertainty</small></summary>
+      <div class="lesson-body">
+        <p>An <strong>out</strong> is a card or sequence that saves or wins the position. Name what it must do and whether you can afford it in time. A card that answers a threat on paper is not a live out if you cannot use it this turn.</p>
+        <div class="lesson-example"><h3>Four in the list is not four left to draw</h3><p>You started with four copies of an answer. Two are in trash and one is in your hand. At most one remains elsewhere; it is not necessarily in your deck. The card in hand may already solve the problem, and trash access may make the discarded copies useful.</p></div>
+        <p>Use your hand and public information to update the count. Don't treat unknown security as known draws, assume an unseen opposing card is absent, or use exact odds without stating what locations and access your model includes.</p>
+        <p class="lesson-drill"><strong>Five-minute drill:</strong> Write every answer to one difficult board, its cost, and the copies you can still access. Estimate your chance of finding one, then compare with the workbook's “Find my out” model and its assumptions.</p>
+        <a href="#tools">Open the workbook tools</a>
+      </div>
+    </details>
+    <details class="lesson" id="improve-review">
+      <summary><span>Review the decision before the result</span><small>Feedback &amp; deliberate practice</small></summary>
+      <div class="lesson-body">
+        <p>Look earlier than the final attack. Reconstruct the first decision that meaningfully changed your chances: the hand you kept, the stack you exposed, the resource you spent, or the threat you ignored. Review wins too; a good result can hide a poor line.</p>
+        <div class="lesson-example"><h3>Separate risk from hindsight</h3><p>A security effect stopped your attack. That does not automatically make attacking wrong. Compare attacking and waiting with the information available before the flip. If waiting almost certainly loses, the risky attack may be the stronger decision.</p></div>
+        <p>Record the position, your chosen line, a legal alternative, and why you preferred one. Multiple causes can contribute to a loss. If you cannot reconstruct enough information, mark the conclusion as uncertain.</p>
+        <p class="lesson-drill"><strong>After your next session:</strong> Review one win and one loss. Pick one recurring decision to drill. In your next games, track whether you applied that habit, alongside the results.</p>
+        <a href="#practice">Use the loss-review template</a>
+      </div>
+    </details>
+    <details class="lesson" id="improve-list">
+      <summary><span>Change the list with a reason</span><small>Testing &amp; deckbuilding</small></summary>
+      <div class="lesson-body">
+        <p>Keep one list for a block of practice so you can learn its lines. Before swapping cards, name the problem: missing setup, running out of resources, failing to answer a threat, or not finishing. A piloting mistake may need a drill rather than a new card.</p>
+        <div class="lesson-example"><h3>Make a testable claim</h3><p>“Replacing one expensive finisher with one searcher should give me more playable openings, but may weaken late-game draws.” Track both outcomes across similar matchups and turn orders. Record the list version so you know which games belong together.</p></div>
+        <p>Change one idea at a time and note what you gave up. A short winning streak does not establish that a swap is better. Repeated awkward hands can suggest a hypothesis; they do not prove the cause by themselves.</p>
+        <p class="lesson-drill"><strong>Before your next edit:</strong> Write the expected benefit, the tradeoff, and what evidence would make you undo it. Review actual decisions as well as the win-loss record.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" data-view="fundamentals" id="weekly-practice" aria-labelledby="weekly-title">
+  <div class="section-head"><div><h2 id="weekly-title">A week of useful practice.</h2><p class="intro">Repeat this cycle with one focus. Short sessions count.</p></div></div>
+  <div class="two"><ol class="routine">
+    <li><div><strong>Prepare: 10 minutes</strong><p>Choose a lesson. Drill ten opening hands or replay one turn with exact memory and attack counts.</p></div></li>
+    <li><div><strong>Play: one focused session</strong><p>Keep the same list. Predict the opponent's next turn and note where your chosen habit changed a decision.</p></div></li>
+    <li><div><strong>Review: 10 minutes</strong><p>Reconstruct one win and one loss. Pause a recorded game at a similar decision, choose a line, then compare the player's reasoning.</p></div></li>
+    <li><div><strong>Return: next session</strong><p>Redo the difficult position without looking at your notes. Keep the focus if it still needs work, or move to the next habit.</p></div></li>
+  </ol><aside class="review"><h3>Give the next session a purpose.</h3><blockquote>“Before passing, I will name their most dangerous reply.”</blockquote><p class="intro">Choose a habit you can observe. “Win more” tells you the result; a specific decision tells you what to practise.</p><div class="actions routine-actions"><a class="button primary" href="#puzzles">Try the decision puzzles</a><a class="button" href="#tools">Find practice tools</a></div><p class="small">The puzzles use Glowing Dawn positions. Apply the same memory, risk and sequencing questions to your own deck.</p></aside></div>
+</section>
+
+<section class="section" data-view="matchups" id="matchups" aria-labelledby="matchups-title">
+  <div class="section-head"><div><h2 id="matchups-title">Who are you playing against?</h2><p class="intro">Pick a matchup to see their threat, your plan, and the cards that matter.</p></div><a class="source-link" href="#source-matchups">Matchup sources</a></div>
+  <div class="match-controls no-print" role="group" aria-label="Show matchup"><button type="button" data-match="all" aria-pressed="true">All four</button><button type="button" data-match="jupiter" aria-pressed="false">Jupitermon</button><button type="button" data-match="toho" aria-pressed="false">Toho Braves</button><button type="button" data-match="merva" aria-pressed="false">TS Mervamon</button><button type="button" data-match="dats" aria-pressed="false">DATA SQUAD</button></div>
+  <div class="matchups" id="matchup-grid">
+    <article class="matchup" data-opponent="jupiter"><div class="matchup-art" data-card-slot="BT26-103"></div><span class="tag">Lingering -DP</span><h3>Jupitermon</h3><dl><dt>Watch for</dt><dd>-5k effects and lingering -13k. Don't assume Atratusmon solves a debuff already applied.</dd><dt>Your plan</dt><dd>Build safely in breeding. Habakirimon's Option side cleared boards in the recorded match; count current DP before relying on it.</dd><dt>Before attacking</dt><dd>If Atratusmon's immunity has expired, activate it before the first security-removal trigger. Puzzle 7 covers the attack-order decision.</dd></dl><p class="evidence">Observed: V-Tamer, Barcelona. Pilot advice: Peoria. <a href="#source-matchups">Sources</a></p></article>
+    <article class="matchup" data-opponent="toho"><div class="matchup-art" data-card-slot="EX12-065"></div><span class="tag">Blockers + recursion</span><h3>Toho Braves</h3><dl><dt>Watch for</dt><dd>Kaguyamon's blocker wall, Ryugumon's punishment, and Arrival replacing a removed body.</dd><dt>Your plan</dt><dd>Aim to remove all five security in one turn, then connect for game. Early checks can feed their trash and Susanoomon setup.</dd><dt>Choose the answer</dt><dd>Atratusmon's immunity helps against Digimon effects. Eclipse Impact can bottom-deck Kaguyamon without its deletion payoffs; still account for Arrival.</dd></dl><p class="evidence">Stated: Madrid, Romulo. Observed: São Paulo top 8. <a href="#source-matchups">Sources</a></p></article>
+    <article class="matchup" data-opponent="merva"><div class="matchup-art" data-card-slot="BT26-081"></div><span class="tag">Suspension + defensive layers</span><h3>TS Mervamon / Homeros</h3><dl><dt>Watch for</dt><dd>Bacchusmon suspending evolvers, Sirenmon protecting bodies, and Homeros buffs changing removal thresholds.</dd><dt>Your plan</dt><dd>In the observed Bacchusmon board, BT25 Cougarmon's evolution chain preserved the Kekkomon attack line. Don't apply that answer to every board.</dd><dt>Choose the answer</dt><dd>Suspend Minervamon with Armalizamon when that opens your attack; deleting it can pay them. Habakiri's -5k alone may miss buffed rookies.</dd></dl><p class="evidence">Observed: GAO, KnTElixar. Card-text support in puzzles 4 and 9. <a href="#source-matchups">Sources</a></p></article>
+    <article class="matchup" data-opponent="dats"><div class="matchup-art" data-card-slot="BT26-082"></div><span class="tag">Early removal + Tamer lock</span><h3>DATA SQUAD Ravemon</h3><dl><dt>Watch for</dt><dd>Lv4-or-lower removal around their T2, hand stripping, and Rosemon locking your Tamers.</dd><dt>Your plan</dt><dd>Consider reaching Lv5 in breeding before exposing the stack. Giving up an attack-time discount can be better than losing the stack.</dd><dt>Protect the engine</dt><dd>Tomoro &amp; Kyo's start-of-main effects work while suspended. Tomoro's fuel effect needs him to suspend. e-Pulse can help recover resources.</dd></dl><p class="evidence">Observed: KnTElixar, DDOUGHY. Breeding plan inferred from removal timing; puzzle 11 checks Tamer text. <a href="#source-matchups">Sources</a></p></article>
+  </div>
+  <div class="note yellow"><strong>“Never chip” is a default, not a universal rule.</strong><p>Peoria advises holding for the kill. Nima's BT25 Jupitermon plan chips to 2-4 security and races. Different lists and boards can reward different plans. Decide whether the checks shorten your clock enough to justify their triggers.</p></div>
+</section>
+
+<section class="section" data-view="practice" id="puzzles" aria-labelledby="puzzles-title">
+  <div class="section-head"><div><h2 id="puzzles-title">A better decision starts here.</h2><p class="intro"><span data-puzzle-count>15</span> real decisions. Read the position, inspect the cards, then choose your line.</p></div><a class="source-link" href="#source-puzzles">Puzzle provenance</a></div>
+  <noscript><p class="note">Enable JavaScript for the interactive puzzles, or use the Puzzles sheet in reports/digimon-player-math.xlsx.</p></noscript>
+  <div class="quiz" id="quiz" hidden>
+    <div class="quiz-top"><div><label for="puzzle-select">Choose a puzzle</label><select id="puzzle-select"></select></div><p class="quiz-score"><strong id="quiz-score">0 / 0</strong><span>correct on first attempt<br>this visit</span></p></div>
+    <span class="tag" id="quiz-tag"></span><p class="situation" id="quiz-situation"></p><details class="quiz-cards" id="quiz-cards"><summary>Card reference</summary><p class="small">Cards mentioned in the question. Some are absent from the stated hand or board; use the position above to decide.</p><div class="card-shelf" id="quiz-card-shelf"></div></details><h3 id="quiz-question" tabindex="-1"></h3>
+    <div class="quiz-options" id="quiz-options" role="group" aria-labelledby="quiz-question"></div>
+    <div class="feedback" id="quiz-feedback" hidden aria-live="polite"></div>
+    <div class="quiz-bottom"><p id="quiz-progress"></p><nav aria-label="Puzzle navigation"><button class="button" id="quiz-prev" type="button">Previous</button><button class="button primary" id="quiz-next" type="button">Next puzzle</button><button class="button" id="quiz-restart" type="button" hidden>Practise again</button></nav></div>
+  </div>
+  <p class="table-note">Answers are a snapshot of <code>tools/puzzles.py</code>. SIM answers reflect the goldfish policy; pilot advice can depend on format and list. The broad rule below an answer should not override the puzzle's conditions.</p>
+</section>
+
+<section class="section" data-view="practice" id="practice" aria-labelledby="practice-title">
+  <div class="section-head"><div><h2 id="practice-title">Make every session teach you something.</h2><p class="intro">Stay on one list long enough to separate decisions from deck changes.</p></div></div>
+  <div class="two"><ol class="routine">
+    <li><div><strong>Warm up with a few decisions.</strong><p>Do 2-3 puzzles. Choose a line before opening the answer.</p></div></li>
+    <li><div><strong>Play a block on one list.</strong><p>Use best-of-3 when possible. Track first/second and how you adapt between games.</p></div></li>
+    <li><div><strong>Count and predict each turn.</strong><p>Memory, fuel, security and DP. Before passing, name their likely next play.</p></div></li>
+    <li><div><strong>Review the deciding turn.</strong><p>Look earlier than the final attack. Separate draw, misplay, matchup and security flip.</p></div></li>
+    <li><div><strong>Pause a strong player's game.</strong><p>Choose your move, resume, then compare the reasoning in the commentary.</p></div></li>
+    <li><div><strong>Drill the recurring mistake.</strong><p>After 20-30 games, look for repeated leaks. Revisit missed puzzles a week later.</p></div></li>
+  </ol><aside class="review"><h3>Your one-minute loss review</h3><blockquote>“Was there a line here that didn't lose?”</blockquote><dl><dt>Record the context</dt><dd>Matchup, result, first/second, Tamer by T2.</dd><dt>Find the first costly decision</dt><dd>Turn number, chosen line, what it gave up.</dd><dt>Name an alternative</dt><dd>What would you do differently with the information available then?</dd><dt>Choose one next drill</dt><dd>Opening hands, exact memory, fuel, attack order, DP or matchup knowledge.</dd></dl><button class="button no-print" type="button" id="copy-review">Copy review template</button><p class="small">20-30 games can reveal repeated mistakes. That is not automatically enough to prove a matchup win rate or a card swap is better.</p></aside></div>
+</section>
+
+<section class="section" data-view="learn" id="timing" aria-labelledby="timing-title">
+  <div class="section-head"><div><h2 id="timing-title">Know your clock. Respect theirs.</h2><p class="intro">Your T4 finish is a useful benchmark. Their interaction can change everything.</p></div><a class="source-link" href="#source-timings">Round 1 timing data</a></div>
+  <div class="finish-rule"><strong>Five security cards, then an attack that connects.</strong><p>Extra checks and security trashing change the number of attacks you need. Blockers, recovery and security effects change the line.</p></div>
+  <div class="note yellow"><strong>Goldfish speed is not matchup win rate.</strong><p>The simulator's opponent does nothing: no blocking, removal, attacks or security effects. Similar turn timings do not show that your line survives a real opponent.</p></div>
+  <div class="table-wrap"><table><caption>Glowing Dawn timing snapshot from 6 Oct 2026. Turn numbers are your own turns.</caption><thead><tr><th scope="col">Milestone</th><th scope="col">Recorded games</th><th scope="col">Goldfish snapshot</th></tr></thead><tbody>
+    <tr><th scope="row">First attack</th><td>Median T2<small>12 games; range T2-T4</small></td><td>T2</td></tr>
+    <tr><th scope="row">First Lv5</th><td>Median T2<small>11 games</small></td><td>63% by end of T2</td></tr>
+    <tr><th scope="row">First Lv6</th><td>Median T2-T3<small>6 at T2, 2 at T3, 4 at T4</small></td><td>79% by end of T3</td></tr>
+    <tr><th scope="row">Tamers by T3</th><td>Median 2<small>Range 1-3</small></td><td>75% have at least 2</td></tr>
+    <tr><th scope="row">Winning turn</th><td>Median T4<small>7 wins; range T3-T4</small></td><td>Median T4<small>Mean 4.15</small></td></tr>
+  </tbody></table></div>
+  <p class="table-note">These are different summaries, not identical statistics. Turn counts were often reconstructed from play order; the real-game sample is small and the winning-turn row excludes losses. This page does not rerun the simulator.</p>
+  <div class="micro"><article><strong>Brace for their T2.</strong><p>The research records early bursts and removal. Development in breeding can preserve a stack.</p></article><article><strong>T4 may be too late.</strong><p>Toho and Jupitermon have observed T3 wins. Waiting needs a survival plan, not just more fuel.</p></article><article><strong>Compare real lines.</strong><p>Count what you pass them, what can stop you, and how your next turn changes if you hold.</p></article></div>
+</section>
+
+<section class="section" data-view="practice" id="tools" aria-labelledby="tools-title">
+  <div class="section-head"><div><h2 id="tools-title">Use the tools you've already built.</h2><p class="intro">Files live in the digimon-goldfish workspace. Copy a path to open it locally.</p></div></div>
+  <div class="resources">
+    <article class="resource"><h3>Practise &amp; calculate</h3><div><p><strong>Puzzles</strong> for decisions. <strong>Find my out</strong> for go-now versus wait. <strong>Memory plan</strong>, <strong>The race</strong> and <strong>Attack risk</strong> for a turn you want to replay.</p><code class="path">reports/digimon-player-math.xlsx</code><button class="button no-print" type="button" data-copy="reports/digimon-player-math.xlsx">Copy workbook path</button></div></article>
+    <article class="resource"><h3>Argue with a trace</h3><div><p>Read the bracketed policy choices. Pause, pick your play, then explain where you disagree. Replace 11 with another seed.</p><code class="command">python3 -m goldfish --trace --seed 11</code><button class="button no-print" type="button" data-copy="python3 -m goldfish --trace --seed 11">Copy command</button><p class="small" style="margin:12px 0 0;color:var(--muted)">Run in the workspace. The trace models an unopposed game, so it cannot choose a real matchup line for you.</p></div></article>
+    <article class="resource"><h3>Keep the game log</h3><div><p>Use <strong>Game Log</strong> and <strong>My Results</strong> for patterns; <strong>Guess Log</strong> for your estimates; <strong>Deck Notes</strong> for the opponent's plan. Put Tamer timing and the deciding mistake in your game notes.</p><code class="path">reports/digimon-player-log.xlsx</code><button class="button no-print" type="button" data-copy="reports/digimon-player-log.xlsx">Copy log path</button><p class="small" style="margin:12px 0 0;color:var(--muted)">This is your existing log. The guide does not write to it. Check “Is my record real” in the player math workbook before interpreting a small record.</p></div></article>
+    <article class="resource"><h3>Price the kill turn</h3><div><p>The <strong>Calculator</strong> sheet models an attack turn against a real list: security, possible stops and your attackers in order. Its answer depends on the inputs and model assumptions.</p><code class="path">reports/glowing-dawn-theorycraft.xlsx</code><button class="button no-print" type="button" data-copy="reports/glowing-dawn-theorycraft.xlsx">Copy calculator path</button></div></article>
+  </div>
+</section>
+
+<aside class="install-panel no-print" id="install-panel" aria-labelledby="install-title" hidden>
+  <div><h2 id="install-title">Take the guide with you.</h2><p id="offline-status" aria-live="polite">Preparing the guide for offline use...</p></div>
+  <button class="button primary" id="install-app" type="button" hidden>Install guide</button>
+  <div class="update-notice" id="update-notice" hidden><p>A new guide is ready. Reloading resets this visit's quiz and checklist.</p><button class="button" id="update-app" type="button">Reload to update</button></div>
+  <details class="install-help"><summary>Add to your phone's home screen</summary><div><p><strong>iPhone:</strong> Open this site in Safari, tap Share, then Add to Home Screen. If offered, keep Open as Web App enabled.</p><p><strong>Android:</strong> Open this site in Chrome, then use Install guide or the browser menu's Install app / Add to Home screen option.</p><p>Open the guide online once and wait for “Ready for offline use” before going offline. The guide, puzzles and card art are saved on this device; external videos, source websites and local workbook files are not included.</p></div></details>
+</aside>
+
+<details class="source-drawer" id="source-drawer"><summary>Sources &amp; research notes <span>Card artwork, evidence, and limitations</span></summary><section class="section sources-section" id="sources" aria-labelledby="sources-title">
+  <div class="section-head"><div><h2 id="sources-title">Keep the evidence in view.</h2><p class="intro">An adaptation of your existing research, not a fresh survey of the current format.</p></div></div>
+  <details id="source-improve"><summary>General improvement lessons</summary><div><p>The Improve view adapts the “Key ideas,” “How to theorycraft,” “Practice” and four-week plan in <code>tools/build_player_workbook.py</code>. Examples and drills are coaching synthesis for this guide, not measured claims about improvement or a universal deck strategy.</p><p>Rule reminders were checked on 7 Oct 2026 against Bandai's <a href="https://world.digimoncard.com/rule/pdf/general_rule.pdf?20260918=" target="_blank" rel="noopener noreferrer">Comprehensive Rules Manual v4.3 (18 Sep 2026)</a>: §§6-1-4 and 6-6 for turn ending, §§6-4 and 6-5 for phase order, and §§11-5, 12 and 13 for successful attacks, blocking and security. Consult the <a href="https://world.digimoncard.com/rule/" target="_blank" rel="noopener noreferrer">official rules and card Q&amp;A</a> for updates and individual card interactions.</p></div></details>
+  <details id="source-art"><summary>Card artwork</summary><div><p>Official English sample card images from <a href="https://world.digimoncard.com/cards/" target="_blank" rel="noopener noreferrer">Bandai’s Digimon Card Game card list</a>. Each enlarged card links to its official details. Images retain their original sample marks. Digimon and card artwork belong to their respective rights holders.</p></div></details>
+  <details id="source-playbook"><summary>Setup, fuel and common misplays</summary><div><p><code>research/round2-playbooks.md</code>, “Glowing Dawn (our deck)”: opening, turn-2 aggression, resources, matchups and misplays. Fuel estimates also come from <code>research/round1-timings.md</code>.</p><ul class="source-list"><li><a href="https://www.youtube.com/watch?v=qjWEEf2UKxM" target="_blank" rel="noopener noreferrer">Peoria / Hoang Zero profile</a>: early Tamers, no casual chip, fuel and memory margin. BT25-era pilot advice.</li><li><a href="https://www.youtube.com/watch?v=CoEe9A1S5mU" target="_blank" rel="noopener noreferrer">Nima / Gere Gaming</a>: Gekkomon, fuel awareness, and the Jupitermon racing exception. BT25-era list.</li><li><a href="https://www.youtube.com/watch?v=MLlgdNbhFjc" target="_blank" rel="noopener noreferrer">DigiCalise BT26 profile</a>: a slower, wider approach prioritizing immunity. The handoff's blanket OTK advice does not capture every list.</li></ul></div></details>
+  <details id="source-matchups"><summary>Matchup lines and their limits</summary><div><p>The matchup cards summarize round 2; early removal timing comes from round 1. Card-text decisions also use <code>tools/puzzles.py</code> and its cited sources.</p><ul class="source-list"><li>Jupitermon: <a href="https://www.youtube.com/watch?v=DhHn8jxncWY" target="_blank" rel="noopener noreferrer">V-Tamer match</a>, <a href="https://www.youtube.com/watch?v=mZ4GiLpJzEs" target="_blank" rel="noopener noreferrer">Barcelona commentary</a>.</li><li>Toho: <a href="https://www.youtube.com/watch?v=vWJCKCJVDy0" target="_blank" rel="noopener noreferrer">Madrid profile</a>, <a href="https://www.youtube.com/watch?v=olBMZIKhl5g" target="_blank" rel="noopener noreferrer">São Paulo top-8 commentary</a>, <a href="https://www.youtube.com/watch?v=TR9dZjK9XH0" target="_blank" rel="noopener noreferrer">Romulo profile</a>.</li><li>TS Mervamon: <a href="https://www.youtube.com/watch?v=u0z_9HckvRM" target="_blank" rel="noopener noreferrer">GAO LCQ match</a>, <a href="https://www.youtube.com/watch?v=0iT08uRH52Q" target="_blank" rel="noopener noreferrer">KnTElixar match</a>. The research found no readable TS pilot source explaining this specific matchup.</li><li>DATA SQUAD: <a href="https://www.youtube.com/watch?v=qiM2Bz92Vd0" target="_blank" rel="noopener noreferrer">KnTElixar Glowing Dawn match</a>, <a href="https://www.youtube.com/watch?v=-_59naRfz6c" target="_blank" rel="noopener noreferrer">DDOUGHY footage</a>. Turn estimates use a small sample.</li></ul></div></details>
+  <details id="source-puzzles"><summary>Puzzles, routines and local tools</summary><div><p>The <span data-puzzle-count>15</span> puzzle situations, choices, answers and explanations are copied from <code>tools/puzzles.py</code> as of 7 Oct 2026. No workbook or player-log file was changed.</p><p>Practice routines and concepts match the “Key ideas” and “Practice” definitions in <code>tools/build_player_workbook.py</code>. Tool instructions and simulator limitations come from <code>README.md</code>. Deck scope: <code>decks/glowing_dawn.txt</code>, dated 6 Oct 2026.</p><p>Interactive scores and checks last for this page visit. Your theme choice and an offline copy of the hosted guide are saved in this browser. Nothing is sent to an external service by the guide.</p></div></details>
+  <details id="source-timings"><summary>Timing data, evidence tags and uncertainty</summary><div><p>The timing table is the Glowing Dawn comparison in <code>research/round1-timings.md</code>, research dated 6 Oct 2026. It is a historical simulation snapshot, not a fresh run. Some source videos remained unread, and automatic captions can be imperfect.</p><p><strong>OBSERVED</strong>: seen in a game. <strong>STATED</strong>: pilot or guide advice. <strong>INFERRED</strong>: researcher reasoning. <strong>COUNTED</strong>: card text or list counts. <strong>SIM</strong>: goldfish model result. <strong>MATH</strong>: a calculation under the stated assumptions.</p><p>Matchup win-rate snapshots disagree between the research rounds, so this guide does not combine or chart them. The practice routine is a learning aid, not evidence of a guaranteed improvement rate.</p></div></details>
+</section></details>
+<footer class="footer"><span>Glowing Dawn / Improvement field guide</span><span>Research: 7 Oct 2026 · Works offline</span></footer>
+</main>
+</div>
+<dialog id="card-dialog" aria-labelledby="card-dialog-title"><div class="card-dialog-top"><div><h2 id="card-dialog-title"></h2><p id="card-dialog-id"></p></div><button class="button" id="close-card" type="button" aria-label="Close card">Close</button></div><img id="card-dialog-image" alt=""><p id="card-dialog-note"></p><a id="card-dialog-source" target="_blank" rel="noopener noreferrer">View official card details</a></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

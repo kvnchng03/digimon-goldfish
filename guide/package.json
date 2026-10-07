@@ -1,0 +1,25 @@
+{
+  "name": "glowing-dawn-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --strictPort",
+    "check": "tsc --noEmit",
+    "build": "npm run check && vite build && node tools/export.ts",
+    "preview": "vite preview --host 127.0.0.1 --strictPort",
+    "sync-puzzles": "node tools/sync-puzzles.ts",
+    "generate-icons": "node tools/generate-icons.ts",
+    "test": "npm run build && playwright test"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.4",
+    "typescript": "7.0.2",
+    "vite": "8.3.1",
+    "vite-plugin-pwa": "2.0.0"
+  }
+}

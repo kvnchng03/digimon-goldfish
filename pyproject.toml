@@ -1,0 +1,16 @@
+[project]
+name = "digimon-goldfish"
+version = "0.1.0"
+description = "Goldfish simulator for the Digimon Card Game (Glowing Dawn card pool)"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Workbook builders are mostly prose data (card notes, research findings); wrapping it hurts more than it helps.
+"tools/*.py" = ["E501"]

@@ -1,0 +1,9 @@
+.venv/
+.ruff_cache/
+__pycache__/
+.DS_Store
+reports/
+research/transcripts/
+guide/node_modules/
+guide/dist/
+.lavish/glowing-dawn-guide.html
