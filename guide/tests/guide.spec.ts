@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { fileURLToPath } from 'node:url';
 import puzzles from '../src/puzzles.json' with { type: 'json' };
 
-test('turn checklist and matchup filters remain usable; print includes every matchup', async ({ page }) => {
+test('turn checklist and matchup filters remain usable; print includes every matchup', async ({ page, context }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
@@ -28,9 +28,24 @@ test('turn checklist and matchup filters remain usable; print includes every mat
   await page.locator('a.source-link[href="#source-playbook"]').first().click();
   await expect(page.locator('#source-playbook')).toHaveAttribute('open', '');
   await page.getByRole('link', { name: 'Practice', exact: true }).click();
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.getByRole('button', { name: 'Copy command', exact: true }).click();
   await expect(page.getByRole('status')).toHaveText('Copied to clipboard.');
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('python3 -m goldfish --trace --seed 11');
   expect(errors).toEqual([]);
+});
+
+test('copy offers the exact text for manual copying when clipboard permission is denied', async ({ page, context }) => {
+  // An empty grant list explicitly denies permissions in this browser context.
+  await context.grantPermissions([]);
+  await page.goto('/#tools');
+  const dialogPromise = page.waitForEvent('dialog');
+  await page.getByRole('button', { name: 'Copy command', exact: true }).click();
+  const dialog = await dialogPromise;
+  expect(dialog.type()).toBe('prompt');
+  expect(dialog.defaultValue()).toBe('python3 -m goldfish --trace --seed 11');
+  await dialog.dismiss();
+  await expect(page.getByRole('status')).toBeHidden();
 });
 
 test('each puzzle scores only its first answer, reveals evidence, and can restart', async ({ page }) => {
